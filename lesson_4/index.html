@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson_4</title>
+</head>
+
+<body>
+    <script>
+
+        var age = prompt('Введите число');
+        if (!isNaN(age) && age > 0) {
+            var triangle = "";
+
+            for (var i = 0; i < age; i++) {
+                for (var j = 1; j <= i; j++) {
+                    triangle += "*";
+                }
+                triangle += "*" + '\n';
+            }
+            console.log(triangle);
+        } else {
+            console.log('Введите цифру');
+        }
+
+    </script>
+</body>
+
+</html>

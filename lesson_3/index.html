@@ -11,21 +11,47 @@
 <body>
     <script>
 
-        var age = prompt('Сколько вам лет?');
-        var count = age % 100;
 
-        if (((count === 0) || ((count >= 5) && (count <= 19)))) {
-            alert('Вам ' + age + ' лет');
+
+
+        var name = prompt(' Как тебя зовут?');
+        var age = prompt(' Сколько тебе лет?');
+        var smoke = confirm('Куришь?');
+
+        if (smoke && (age > 18) ) {
+            alert(name + 'Ну и зря');
         } else {
-            var time = age % 10;
-            if (time === 1) {
-                alert('Вам ' + age + ' год');
-            } else if (time === 2 || time === 3 || time === 4) {
-                alert('Вам ' + age + ' года');
-            } else {
-                alert('Вам ' + age + ' лет');
-            }
+            alert(name + ' ну и молодец не надо');
         }
+        if (smoke && (age < 18)) {
+            alert(name + 'Маме расскажу');
+        } else {
+            alert ( name + 'так держать!');
+        }
+
+
+
+
+    //    var smoke = 
+
+
+
+
+        // var age = prompt('Сколько вам лет?');
+        // var count = age % 100;
+
+        // if (((count === 0) || ((count >= 5) && (count <= 19)))) {
+        //     alert('Вам ' + age + ' лет');
+        // } else {
+        //     var time = age % 10;
+        //     if (time === 1) {
+        //         alert('Вам ' + age + ' год');
+        //     } else if (time === 2 || time === 3 || time === 4) {
+        //         alert('Вам ' + age + ' года');
+        //     } else {
+        //         alert('Вам ' + age + ' лет');
+        //     }
+        // }
 
     </script>
 </body>
