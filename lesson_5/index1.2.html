@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function f(a, b, c) {
+            if (a === undefined && b === undefined) {
+            }
+            console.log(a, b);
+
+            function sum(a, b) {
+                return a + b;
+
+            }
+        }
+        f(2, 3);
+
+
+
+
+
+        function f(a, b, c) {
+            if (c && {}.toString.call(c) === '[object Function]') {
+                return c.call();
+            } else {
+                function sum(a = 2, b = 3) {
+
+                    return a + b;
+
+                }
+                return sum(a, b);
+            }
+        }
+        function a() {
+            return 5;
+        }
+        console.log(f(1, 2, a()));
+        console.log(f(undefined, undefined));
+    </script>
+</body>
+
+</html>
