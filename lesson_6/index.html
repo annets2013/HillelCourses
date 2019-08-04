@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson_6</title>
+</head>
+<body>
+    <script>
+        function isCharPresent(rowToCheck, symbolToCheck) {
+            if (rowToCheck !== undefined && rowToCheck.length > 0 && symbolToCheck !== undefined && symbolToCheck.length > 0) {
+                var isPresent = false;
+                for (i = 0; i < rowToCheck.length; i++) {
+                    var s = rowToCheck.charAt(i);
+                    if (s === symbolToCheck) {
+                        isPresent = true;
+                        break;
+                    }
+                }
+                return isPresent;
+            }
+        }
+        var string = prompt('Введите значение');
+        var symbol = prompt('Введите символ');
+        console.log(isCharPresent(string, symbol));
+
+
+
+
+        function charIndexOf(rowToCheck, symbolToCheck) {
+            if (rowToCheck !== undefined && rowToCheck.length > 0
+                && symbolToCheck !== undefined && symbolToCheck.length > 0) {
+                var index = -1;
+                for (i = 0; i < rowToCheck.length; i++) {
+                    var s = rowToCheck.charAt(i);
+                    if (s === symbolToCheck) {
+                        index = i;
+                        break;
+                    }
+                }
+                return index;
+            }
+        }
+        var string = prompt('Введите значение');
+        var symbol = prompt('Введите символ');
+        console.log(charIndexOf(string, symbol));
+
+
+
+
+        var aboutMe = {
+            name: 'Ann',
+            age: 22,
+            animal: 'cat',
+            dish: {
+                sweet: 'biscuit',
+                firstMeal: 'borscht',
+                garnish: 'puree'
+
+            }
+        }
+        function objectClone(objectToClone) {
+
+            var clone = {};
+            for (var key in objectToClone) {
+                clone[key] = objectToClone[key];
+            }
+            return clone;
+        }
+        console.log(objectClone(aboutMe));
+    </script>
+</body>
+</html>
