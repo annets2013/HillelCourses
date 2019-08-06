@@ -65,7 +65,7 @@
         function objectClone(objectToClone) {
             var clone = {};
             for (var key in objectToClone) {
-                if (typeof (objectToClone[key]) === 'object') {
+                if (typeof (objectToClone[key]) === 'object' && objectToClone[key] != null) {
                     clone[key] = {};
                     for (var key2 in objectToClone[key]) {
                         clone[key][key2] = objectToClone[key][key2];
@@ -75,8 +75,8 @@
                 }
             }
             return clone;
-        }
 
+        }
         console.log(objectClone(aboutMe));
         aboutMe.dish.sweet = 'another value';
     </script>
