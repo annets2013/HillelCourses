@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lesson_6</title>
 </head>
+
 <body>
     <script>
         function isCharPresent(rowToCheck, symbolToCheck) {
@@ -49,26 +51,35 @@
 
 
 
-        var aboutMe = {
-            name: 'Ann',
-            age: 22,
-            animal: 'cat',
-            dish: {
-                sweet: 'biscuit',
-                firstMeal: 'borscht',
-                garnish: 'puree'
 
-            }
+        var aboutMe = {};
+        aboutMe.name = 'Ann';
+        aboutMe.age = 22;
+        aboutMe.animal = 'cat';
+        aboutMe.dish = {
+            sweet: 'biscuit',
+            firstMeal: 'borscht',
+            garnish: 'puree'
         }
-        function objectClone(objectToClone) {
 
+        function objectClone(objectToClone) {
             var clone = {};
             for (var key in objectToClone) {
-                clone[key] = objectToClone[key];
+                if (typeof (objectToClone[key]) === 'object') {
+                    clone[key] = {};
+                    for (var key2 in objectToClone[key]) {
+                        clone[key][key2] = objectToClone[key][key2];
+                    }
+                } else {
+                    clone[key] = objectToClone[key];
+                }
             }
             return clone;
         }
+
         console.log(objectClone(aboutMe));
+        aboutMe.dish.sweet = 'another value';
     </script>
 </body>
+
 </html>
