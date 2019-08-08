@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson_7</title>
+</head>
+
+<body>
+    <script>
+        function padString(row, rowLength, symbol, addToTheRight) {
+            if (row === undefined || row === null || row.length >= rowLength) {
+                return row;
+            }
+            row = addToTheRight ? row + symbol : symbol + row;
+
+            row = padString(row, rowLength, symbol, addToTheRight)
+            return row;
+        }
+        console.log(padString('ivana', 7, '*', true));
+    </script>
+</body>
+
+</html>
