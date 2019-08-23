@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson_8</title>
+</head>
+
+<body>
+
+    <script>
+        function odd(numbers) {
+            var arrOfChat = [];
+            for (i = 0; i < numbers.length; i++) {
+                if ((numbers[i] % 2) === 1) {
+                    arrOfChat.push(numbers[i]);
+                }
+            }
+            return arrOfChat;
+        }
+        var arr = [18, 20, 26, 46, 59, 77];
+        console.log(odd(arr));
+
+
+        function even(numbers) {
+            var arrOfChat = [];
+            for (i = 0; i < numbers.length; i++) {
+                if ((numbers[i] % 2) === 0) {
+                    arrOfChat.push(numbers[i]);
+                }
+            }
+            return arrOfChat;
+        }
+        var arr = [18, 20, 26, 46, 59, 77];
+        console.log(even(arr));
+
+
+
+
+        function isPalindrome(number) {
+            var result = true;
+            for (i = 0; i < number.length / 2; i++) {
+                var a = number[i];
+                var b = number[number.length - 1 - i];
+                if (a !== b) {
+                    result = false;
+                }
+            }
+            return result;
+        }
+        var isPalindrome = isPalindrome('арозаупаланалапуазора');
+        console.log(isPalindrome);
+
+
+
+
+
+        function flat(arrayToChange) {
+            var result = [];
+            for (var i = 0; i < arrayToChange.length; i++) {
+                for (var j = 0; j < arrayToChange[i].length; j++) {
+                    result.push(arrayToChange[i][j]);
+                }
+            }
+            return result;
+        }
+        var arr = [
+            [2, 15, 28],
+            [16, 29, 45],
+            [43, 49, 62],
+        ];
+        var newArray = flat(arr);
+        console.log(newArray);
+
+
+
+
+        function flat(arrayToChange) {
+            var result = arrayToChange.flat();
+            return result;
+        }
+        var arr = [[2, 6, 12, 22], [18, 39, 48], [16, 88, 29]];
+        var newArray = flat(arr);
+        console.log(newArray);
+
+    </script>
+</body>
+
+</html>
