@@ -57,7 +57,7 @@
 
 
 
-        function flat(arrayToChange) {
+        function customFlat(arrayToChange) {
             var result = [];
             for (var i = 0; i < arrayToChange.length; i++) {
                 for (var j = 0; j < arrayToChange[i].length; j++) {
@@ -70,8 +70,13 @@
             [2, 15, 28],
             [16, 29, 45],
             [43, 49, 62],
+            [77, 88, 62],
+            [88, 88, 62],
+            [33, 88, 62],
+            [77, 88, 62],
+            [77, 88, 62],
         ];
-        var newArray = flat(arr);
+        var newArray = customFlat(arr);
         console.log(newArray);
 
 
