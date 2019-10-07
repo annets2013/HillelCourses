@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function User(name, surname, yearOfBirth) {
+            this.name = name;
+            this.surname = surname;
+            this.yearOfBirth = yearOfBirth;
+            this.assessments = [9, 9, 9, 10, 10, 9, 10, 10, 9, 9];
+            this.attendances = new Array(30);
+            var _this = this;
+
+
+            this.getAge = function () {
+                var date = new Date();
+                return date.getFullYear() - yearOfBirth;
+            }
+
+            this.averageMark = function () {
+                var sum = 0;
+                this.assessments.forEach(function (item) {
+                    sum = sum + item;
+                });
+
+                return sum / this.assessments.length;
+            }
+
+            this.mark = function (assessment) {
+
+                if (isNaN(assessment) && !isFinite(assessment)) {
+                    alert('Введите число от 0 до 10');
+                }
+
+                if (assessment < 0 || assessment > 10) {
+                    alert('Введите число от 0 до 10');
+                }
+
+                this.assessments.push(assessment);
+            }
+
+            this.present = function () {
+                if (this.attendances[this.attendances.length - 1] !== undefined) {
+                    alert('Массив посещаемости заполнен');
+                    return;
+                }
+                for (var i = 0; i < this.attendances.length; i++) {
+                    if (this.attendances[i] === undefined) {
+                        this.attendances[i] = true;
+                        break;
+                    }
+                }
+            }
+
+            this.absent = function () {
+                if (this.attendances[this.attendances.length - 1] !== undefined) {
+                    alert('Массив посещаемости заполнен');
+                    return;
+                }
+                for (var i = 0; i < this.attendances.length; i++) {
+                    if (this.attendances[i] === undefined) {
+                        this.attendances[i] = false;
+                        break;
+                    }
+                }
+            }
+
+            this.summary = function () {
+                if (this.averageMark() > 9 && averageVisit() > 0.9) {
+                    return "Ути какой молодчинка!";
+                } else if (this.averageMark() < 9 && averageVisit() < 0.9) {
+                    return "Редиска!";
+                } else {
+                    return "Норм, но можно лучше";
+                }
+
+            }
+
+            function averageVisit() {
+                var result = _this.attendances.reduce(function (sum, current) {
+                    return sum + current
+                }, 0);
+
+                return result / _this.attendances.length;
+            }
+
+        }
+
+        var student1 = new User('Anna', 'Alexandrovna', 1996);
+        console.log(student1.getAge());
+        
+    </script>
+
+</body>
+
+</html>
